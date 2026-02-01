@@ -27,7 +27,7 @@ module.exports = function(RED) {
 							"Content-Type": "application/json"
 						},
 						body: JSON.stringify([{
-							inputPortIdx: this.inputPort && !Number.isNaN(Number(this.inputPort)) ? Number(this.inputPort) : 0,
+							inputPort: this.inputPort && !Number.isNaN(Number(this.inputPort)) ? Number(this.inputPort) : 0,
 							debounce: this.debounce && !Number.isNaN(Number(this.debounce)) ? Number(this.debounce) : 0,
 							doubleclick: this.doubleclick && !Number.isNaN(Number(this.doubleclick)) ? Number(this.doubleclick) : 0,
 							actions: msg.payload,
