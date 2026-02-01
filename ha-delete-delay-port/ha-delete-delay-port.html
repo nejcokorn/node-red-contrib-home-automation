@@ -64,9 +64,20 @@
 		<label for="node-input-actionPort">Port</label>
 		<input type="text" id="node-input-actionPort">
 		<br />
-		<small id="node-help-actionPort"></small>
+		<small id="node-help-actionPort">Enter the output port to clear delays for (0-15).</small>
 	</div>
 </script>
 
 <script type="text/html" data-help-name="ha-delete-delay-port">
+	<p>Clears all delays for a specific output port on a device.</p>
+	<h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>msg</dt>
+		<dd>Any input message triggers the delete request.</dd>
+	</dl>
+	<h3>Outputs</h3>
+	<dl class="message-properties">
+		<dt>payload</dt>
+		<dd>Delete response returned by the agent.</dd>
+	</dl>
 </script>

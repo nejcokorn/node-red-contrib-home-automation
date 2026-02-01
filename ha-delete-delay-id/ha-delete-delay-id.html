@@ -64,9 +64,20 @@
 		<label for="node-input-actionDelayId">Delay ID</label>
 		<input type="text" id="node-input-actionDelayId">
 		<br />
-		<small id="node-help-actionDelayId"></small>
+		<small id="node-help-actionDelayId">Enter the delay identifier to clear.</small>
 	</div>
 </script>
 
 <script type="text/html" data-help-name="ha-delete-delay-id">
+	<p>Clears a specific delay on a device by delay ID.</p>
+	<h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>msg</dt>
+		<dd>Any input message triggers the delete request.</dd>
+	</dl>
+	<h3>Outputs</h3>
+	<dl class="message-properties">
+		<dt>payload</dt>
+		<dd>Delete response returned by the agent.</dd>
+	</dl>
 </script>
