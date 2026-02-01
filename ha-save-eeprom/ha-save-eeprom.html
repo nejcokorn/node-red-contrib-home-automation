@@ -58,4 +58,17 @@
 </script>
 
 <script type="text/html" data-help-name="ha-save-eeprom">
+	<p>Saves the current device configuration to EEPROM so it persists after reboot.</p>
+	<h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>msg</dt>
+		<dd>Any input message triggers the save request.</dd>
+	</dl>
+	<h3>Outputs</h3>
+	<dl class="message-properties">
+		<dt>payload</dt>
+		<dd>Response returned by the agent contains the size of data stored in EEPROM.</dd>
+	</dl>
+	<h3>Details</h3>
+	<p>This operation may take a moment and writes to non-volatile memory.</p>
 </script>
