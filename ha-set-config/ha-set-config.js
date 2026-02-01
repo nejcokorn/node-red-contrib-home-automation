@@ -20,16 +20,6 @@ module.exports = function(RED) {
 					return done(Error("Configure Home Automation agent."));
 				}
 
-				console.log(JSON.stringify([{
-							inputPortIdx: this.inputPort && !Number.isNaN(Number(this.inputPort)) ? Number(this.inputPort) : 0,
-							debounce: this.debounce && !Number.isNaN(Number(this.debounce)) ? Number(this.debounce) : 0,
-							doubleclick: this.doubleclick && !Number.isNaN(Number(this.doubleclick)) ? Number(this.doubleclick) : 0,
-							actions: msg.payload,
-							bypassInstantly: this.bypassInstantly == 1 ? 1 : 0,
-							bypassOnDisconnect: this.bypassOnDisconnect == 1 ? 1 : 0
-						}]));
-				
-
 				const response = await fetch(`${this.agentNode.url}/can/${this.agentNode.canbus}/device/${this.deviceId}/config`,
 					{
 						method: "POST",
@@ -49,6 +39,9 @@ module.exports = function(RED) {
 				const json = await response.json();
 				if (json.success == true) {
 					send({ payload: json.data });
+					if (done) {
+						done();
+					}
 				} else {
 					done(json.error);
 				}

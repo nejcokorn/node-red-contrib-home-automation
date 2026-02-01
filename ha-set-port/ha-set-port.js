@@ -27,8 +27,11 @@ module.exports = function(RED) {
 					}
 				);
 				const json = await response.json();
-
-				send({ payload: json.data });
+				if (json.success == true) {
+					send({ payload: json.data });
+				} else {
+					done(json.error);
+				}
 			} catch (error) {
 				done(error);
 			}
