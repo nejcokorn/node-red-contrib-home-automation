@@ -19,6 +19,10 @@
 				required: false,
 				value: ''
 			},
+			actionConfigSwitch: {
+				required: false,
+				value: ''
+			},
 			actionSkipWhenDelayDeviceId: {
 				value: ''
 			},
@@ -148,6 +152,19 @@
 		<small id="node-help-actionLongpress">Specifies how long the button must be held (in milliseconds) to trigger the action.</small>
 		<br />
 		<small id="node-help-actionLongpress">Only relevant when <strong>Mode</strong> is set to <strong>Long press</strong>.</small>
+	</div>
+	<div class="form-row">
+		<label for="node-input-actionConfigSwitch">Config switch</label>
+		<select id="node-input-actionConfigSwitch">
+			<option disabled value="">Select...</option>
+			<option value="0">Always active</option>
+			<option value="1">Pin 1</option>
+			<option value="2">Pin 2</option>
+			<option value="3">Pin 3</option>
+			<option value="4">Pin 4</option>
+		</select>
+		<br />
+		<small id="node-help-actionConfigSwitch">Action will only execute when DIP Switch on the PCB matches pin selection.</small>
 	</div>
 	<p>
 		<strong>Skip action when an active delay exists</strong>
