@@ -1,0 +1,108 @@
+<script type="text/javascript">
+	RED.nodes.registerType('ha-set-config', {
+		category: 'home-automation',
+		color: '#D99B66',
+				// #595336
+				// #D99B66
+				// #F2CEAE
+				// #BF9075
+				// #F2E0D5
+		defaults: {
+			agent: {
+				type: "ha-agent",
+				required: true
+			},
+			deviceId: {
+				validate: RED.validators.number(),
+				required: false,
+			},
+			inputPort: {
+				validate: RED.validators.number(),
+				required: false,
+			},
+			debounce: {
+				validate: RED.validators.number(),
+				required: false,
+			},
+			doubleclick: {
+				validate: RED.validators.number(),
+				required: false,
+			},
+			bypassInstantly: {
+				required: false,
+			},
+			bypassOnDisconnect: {
+				required: false,
+
+			},
+		},
+		inputs: 1,
+		outputs: 1,
+		outputLabels: ['port'],
+		icon: "font-awesome/fa-cogs",
+		align: 'right',
+		oneditprepare: function() {
+		},
+		oneditsave: function() {
+		},
+		label: function() {
+			return this.name;
+		}
+	});
+</script>
+<style>
+</style>
+<script type="text/html" data-template-name="ha-set-config">
+	<div class="form-row">
+		<label for="node-input-name">
+			<i class="fa fa-tag"></i>
+			Name
+		</label>
+		<input type="text" id="node-input-name" class="offset-md-2">
+	</div>
+	<hr />
+	<h3>Home Automation Device</h3>
+	<div class="form-row">
+		<label for="node-input-agent">Agent</label>
+		<input type="text" id="node-input-agent">
+		<br />
+		<small id="node-help-agent">Select the Home Automation agent configuration to use for the request.</small>
+	</div>
+	<div class="form-row">
+		<label for="node-input-deviceId">Device ID</label>
+		<input type="number" min="0" max="239" id="node-input-deviceId">
+		<br />
+		<small id="node-help-deviceId">Enter the target device to send this configuration to.</small>
+	</div>
+	<div class="form-row">
+		<label for="node-input-doubleclick">Double click</label>
+		<input type="number" min="0" max="239" id="node-input-doubleclick">
+		<br />
+		<small id="node-help-doubleclick">If any of the actions relay on double click mode, this should be set. In miliseconds</small>
+	</div>
+	<hr />
+	<h3>Input execute conditions</h3>
+	<div class="form-row">
+		<label for="node-input-bypassInstantly">Execute instantly</label>
+		<select id="node-input-bypassInstantly">
+			<option disabled value="">Select...</option>
+			<option value="1">True</option>
+			<option value="0">False</option>
+		</select>
+		<br />
+		<small id="node-help-bypassInstantly">Execute actions stored on this input</small>
+	</div>
+	<div class="form-row">
+		<label for="node-input-bypassOnDisconnect">On disconnect</label>
+		<select id="node-input-bypassOnDisconnect">
+			<option disabled value="">Select...</option>
+			<option value="1">True</option>
+			<option value="0">False</option>
+		</select>
+		<br />
+		<small id="node-help-bypassOnDisconnect">Execute actions stored on this input when disconected from master</small>
+	</div>
+</script>
+
+<script type="text/html" data-help-name="ha-set-config">
+</script>
