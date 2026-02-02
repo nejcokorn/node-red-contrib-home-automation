@@ -23,8 +23,7 @@
 			"ha-save-eeprom":       "./ha-save-eeprom/ha-save-eeprom.js"
 		}
 	},
-	"author": "",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 	}
 }
